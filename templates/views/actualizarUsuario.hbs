@@ -1,0 +1,50 @@
+{{>header}}
+
+	<p>
+		Bienvenido a la pagina de Información de Usuario
+	</p>
+
+	<form action="/actualizarUsuario" method="post" enctype="multipart/form-data">
+		<div class="form-group">
+				<label>Nombre Interesado</label><br>
+				<input type="text" name ="nombre" value="{{nombre}}" class="form-control" placeholder="Nombre" required>
+				<br>
+				<label>Contraseña</label><br>
+				<input type="password" name ="password"  class="form-control" placeholder="Contraseña" required>
+				<br>
+				<div class="row">
+					<div class="col">
+						<label>Documento de identidad</label><br>
+						<input type="text" readonly=»readonly» name ="identificacion" value="{{identificacion}}" class="form-control" placeholder="identificacion" required>
+					</div>
+					<div class="col">
+						<label>Correo Electronico</label><br>
+						<input type="email" name ="email" value="{{correo}}" class="form-control" placeholder="E-mail" required>
+					</div>
+					<div class="col">
+						<label>Telefono</label><br>
+						<input type="text" name ="telefono" value="{{telefono}}" class="form-control" placeholder="Tel/Cel" required>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col">
+						<label>Foto de perfil actual</label>
+						<img src="data:img/*;base64, {{avatar}}" class="img-fluid">
+					</div>
+					<div class="col">
+						<label>Nueva foto de perfil<label>
+						<input type="file" class="form-control" name="archivo" accept="image/*">
+					</div>
+				</div>
+				
+			<br>
+			<button class="btn btn-primary mb-2">Actualizar</button>
+		</div>
+	</form>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+
+{{>footer}}

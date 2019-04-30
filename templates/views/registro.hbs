@@ -1,0 +1,44 @@
+{{>header}}
+
+	<p>
+		Bienvenido a la pagina de Registro de Usuarios. Unidad de Educación Contunua
+	</p>
+
+	<form action="/registro" method="post" enctype="multipart/form-data">
+		<div class="form-group">
+				<label>Nombre Interesado</label><br>
+				<input type="text" name ="nombre" class="form-control" placeholder="Nombre" required>
+				<br>
+				<label>Contraseña</label><br>
+				<input type="password" name ="password" class="form-control" placeholder="Contraseña" required>
+				<br>
+				<div class="row">
+					<div class="col">
+						<label>Documento de identidad</label><br>
+						<input type="text" name ="identificacion" class="form-control" placeholder="identificacion" required>
+					</div>
+					<div class="col">
+						<label>Correo Electronico</label><br>
+						<input type="email" name ="email" class="form-control" placeholder="E-mail" required>
+					</div>
+					<div class="col">
+						<label>Telefono</label><br>
+						<input type="text" name ="telefono" class="form-control" placeholder="Tel/Cel" required>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col">
+						<button class="btn btn-primary mb-2">Inscribirme</button>
+					<div class="col">
+						<input type="file" class="form-control" name="archivo" accept="image/*">
+					</div>
+				</div>
+		</div>
+	</form>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+
+{{>footer}}

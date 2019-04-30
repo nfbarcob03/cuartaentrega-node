@@ -1,0 +1,45 @@
+{{>header}}
+	<p>
+		Bienvenido a la pagina de creación de cursos de Educacion Continua para la Unversidad Nacional de Colombia
+	</p>
+	<p>
+		Aquí puedes inscribir nuevos cursos para ser divulgados entre la comunidad interesada
+	</p>
+
+	<form action="/crearCurso" method="post">
+		<div class="form-group">
+				<label>Nombre del Curso</label><br>
+				<input type="text" name ="nombre" class="form-control" placeholder="Nombre Curso" required>
+				<br>
+				<div class="row">
+					<div class="col">
+						<label>ID</label><br>
+						<input type="number" name ="identificador" class="form-control" placeholder="ID del Curso" required>
+					</div>
+					<div class="col">
+						<label>Descripcion </label><br>
+						<input type="text" name ="descripcion" class="form-control" placeholder="Descripcion del Curso" required>
+					</div>
+					<div class="col">
+						<label>Valor (en $ Pesos)</label><br>
+						<input type="number" name ="valor" class="form-control" placeholder="Valor" required>
+					</div>
+					<div class="col">
+						<label>Modalidad</label><br>
+						<select name="modalidad" style="width:100%;">
+							<option value="Virtual">Virtual</option>
+							<option value="Presencial">Presencial</option>
+						</select>
+					</div>
+					<div class="col">
+						<label>Intensidad horaria</label><br>
+						<input type="text" name ="intensidad" class="form-control" placeholder="intensidad horaria">
+					</div>
+				</div>
+			<br>
+			<button class="btn btn-primary mb-2">Crear Curso</button>
+		</div>
+	</form>
+
+
+{{>footer}}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+	<meta charset="UTF-8">
+	<title> Segunda Entrega </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Bootstrap css -->
+  	<link rel="stylesheet" href="\css\bootstrap.min.css"  type="text/css">
+</head>
+<body>
+	<div class="jumbotron">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-4">
+					<h1>{{titulo}}</h1>
+				</div>
+				<div class="col-sm-8">
+					<img src="img/banner.png" class="img-fluid" width="100%"  height="100%">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	  <div class="collapse navbar-collapse" id="navbarNav">
+	  	<ul class="navbar-nav mr-auto">
+	  		<li class="nav-item">
+	    		<a class="nav-link"  href="/" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+	    	</li>	
+
+
+	    	
+	    	{{#if aspirante}}
+	    	<li class="nav-item">
+	    		<a class="nav-link" href="/listar_cursos_usuario" role="tab" aria-controls="nav-profile" aria-selected="true">Cursos</a>
+	    	</li>
+	    	<li class="nav-item">
+	    		<a class="nav-link" href="/inscripcion_curso" role="tab" aria-controls="nav-profile" aria-selected="true">Inscripcion Curso</a>
+	    	</li>
+	    	{{/if}}
+
+	    	{{#if coordinador}}
+	    	<li class="nav-item">
+	    		<a class="nav-link" href="/listar_cursos_admin" role="tab" aria-controls="nav-profile" aria-selected="true">Cursos</a>
+	    	</li>
+	    	<li class="nav-item">
+	    		<a class="nav-link" href="/crearCursos" role="tab" aria-controls="nav-profile" aria-selected="true">Crear Curso</a>
+	    	</li>
+	    	<li class="nav-item">
+	    		 <a class="nav-link" href="/verInscritos" role="tab" aria-controls="nav-profile" aria-selected="true">Ver Inscritos</a>
+	    	</li>	
+	    	<li class="nav-item">
+	    		 <a class="nav-link" href="/verusuarios" role="tab" aria-controls="nav-profile" aria-selected="true">Ver Usuarios</a>
+	    	</li>
+	    	<li class="nav-item">
+	    		 <a class="nav-link" href="/actualizarCurso" role="tab" aria-controls="nav-profile" aria-selected="true">Modificar curso</a>
+	    	</li>
+	    	{{/if}}
+	    {{#if session}}	
+	  		<li class="nav-item">
+	    		 <a class="nav-link" href="/actualizarUsuario" role="tab" aria-controls="nav-profile" aria-selected="true">Ver informacion de usuario</a>
+	    	</li>
+
+	   	</ul>
+		<form class="form-inline my-2 my-lg-0" action="/salir" method="get">
+			<h3>{{nombre}}</h3>
+			<div>
+				<img src="data:img/*;base64, {{avatar}}" class="img-fluid"  width="50" height="50">
+			</div>
+			<button class="btn btn-primary my-2 my-sm-0" type="submit">Salir</button>
+		</form>
+
+		{{else}}
+		<li class="nav-item">
+	    		<a class="nav-link" href="/registro" role="tab" aria-controls="nav-profile" aria-selected="true">Registro</a>
+	    </li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" action="/ingresar" method="post">
+			<input class="fomr-control mr-sm-2" type="text" name="user" placeholder="Nombre de Usuario">
+			<input class="fomr-control mr-sm-2" type="password" name="password" placeholder="Contraseña">
+			<button class="btn btn-primary my-2 my-sm-0" type="submit">Ingresar</button>
+		</form>
+		{{/if}}
+
+ 	</div>
+</nav>
+

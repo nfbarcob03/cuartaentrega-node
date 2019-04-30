@@ -1,0 +1,54 @@
+{{>header}}
+	<p>
+		Bienvenido a la pagina de Actualizacion de cursos de Educacion Continua para la Unversidad Nacional de Colombia
+	</p>
+	<p>
+		Aquí puedes actualizar los cursos existentes
+	</p>
+
+	<form action="/actualizarCurso" method="post">
+		<div class="form-group">
+				<label>Nombre del Curso</label><br>
+				<input type="text" name ="nombre" value="{{curso.nombre}}" class="form-control" placeholder="Nombre Curso" required>
+				<br>
+				<div class="row">
+					<div class="col">
+						<label>ID</label><br>
+						<input type="number" name ="identificador" value="{{curso.identificador}}" class="form-control" placeholder="ID del Curso" required>
+					</div>
+					<div class="col">
+						<label>Descripcion </label><br>
+						<input type="text" name ="descripcion" value="{{curso.descripcion}}" class="form-control" placeholder="Descripcion del Curso" required>
+					</div>
+					<div class="col">
+						<label>Valor (en $ Pesos)</label><br>
+						<input type="number" name ="valor" value="{{curso.valor}}" class="form-control" placeholder="Valor" required>
+					</div>
+					<div class="col">
+						<label>Modalidad</label><br>
+						<select name="modalidad" value="{{curso.modalidad}}" style="width:100%;">
+							<option value="Virtual">Virtual</option>
+							<option value="Presencial">Presencial</option>
+						</select>
+						<input type="text" value="{{curso.modalidad}}" class="form-control" placeholder="Modalidad actual" readonly="readonly">
+					</div>
+					<div class="col">
+						<label>Intensidad horaria</label><br>
+						<input type="text" name ="intensidad" value="{{curso.intensidad}}" class="form-control" placeholder="intensidad horaria">
+					</div>
+				</div>
+			<br>
+			<label>Estado</label><br>
+				<select name="estado" value="{{curso.estado}}" style="width:40%;">
+					<option value="abierto">Disponible</option>
+					<option value="cerrado">No disponible</option>
+				</select>
+				<input type="text" value="{{curso.estado}}" class="form-control" placeholder="Estado actual" readonly="readonly">
+				<br>
+				<br>
+			<button class="btn btn-primary mb-2">Actualizar</button>
+		</div>
+	</form>
+
+
+{{>footer}}

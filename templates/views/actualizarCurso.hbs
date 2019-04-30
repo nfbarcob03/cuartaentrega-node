@@ -1,0 +1,17 @@
+{{>header}}
+	<p>
+		Bienvenido a la pagina de Actualizacion de cursos de Educacion Continua para la Unversidad Nacional de Colombia
+	</p>
+	<p>
+		Aquí puedes actualizar los cursos existentes
+	</p>
+
+	<form action="/listaActualizarCursos" method="post">
+		<h2>Cambiar el estado de algun curso</h2>
+			{{{lista_curso_actualizar listado}}}
+			<br></br>
+		<button class="btn btn-primary mb-2">Cambiar</button>
+	</form>
+
+
+{{>footer}}
